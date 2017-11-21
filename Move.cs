@@ -11,8 +11,11 @@ public class Move : MonoBehaviour {
     void FixedUpdate()
     {
         Vector3 despriedPostion = target.position + offset;
-        Vector3 smoothPostion = Vector3.Lerp(transform.position, despriedPostion,);
-        
+        Vector3 smoothPostion = Vector3.Lerp(transform.position, despriedPostion,smoothSpeed);
+        transform.position = smoothPostion;
+        transform.LookAt(target); 
+
+
         transform.position = smoothPostion ;
         transform.LookAt(target);
     }
